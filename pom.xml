@@ -4,6 +4,22 @@
   <artifactId>GovHealthClinic</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  
+  <dependencies>
+   <dependency>
+            <groupId>com.heroku.sdk</groupId>
+            <artifactId>heroku-maven-plugin</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+   <dependency>
+   <groupId>jakarta.platform</groupId>
+   <artifactId>jakarta.jakartaee-web-api</artifactId>
+   <version>10.0.23</version>
+   <scope>provided</scope>
+   </dependency>
+  </dependencies>
+  
+  
   <build>
     <plugins>
       <plugin>
@@ -16,17 +32,6 @@
         <configuration>
           <release>17</release>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>com.heroku.sdk</groupId>
-        <artifactId>heroku-maven-plugin</artifactId>
-        <version>3.0.7</version>
-        <configuration>
-  <appName>gov-healthclinic</appName>
-  <processTypes>
-     <web>mvn tomcat10:run</web>
-  </processTypes>
-</configuration>
       </plugin>
     </plugins>
   </build>
